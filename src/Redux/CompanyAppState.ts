@@ -8,11 +8,10 @@ export class CompanyAppState {
 // Step 2 - define all required actions
 export enum ActionType {
     GOT_ALL_COMPANY_COUPONS = "GOT_ALL_COMPANY_COUPONS",
-    GOT_SINGLE_COUPON = "GOT_SINGLE_COUPON",
     ADDED_COUPON = "ADDED_COUPON",
     UPDATED_COUPON = "UPDATED_COUPON",
     DELETED_COUPON = "DELETED_COUPON",
-    REMOVED_COUPON = "REMOVED_COUPON",
+    REMOVED_COMPANY_COUPONS = "REMOVED_COMPANY_COUPONS",
 }
 
 // Step 3 - define what is action in terms of data
@@ -26,13 +25,6 @@ export function gotAllCompanyCouponsAction(coupons: CouponModel[]): CouponAction
     return {
         type: ActionType.GOT_ALL_COMPANY_COUPONS,
         payload: coupons,
-    };
-}
-
-export function gotSingleCouponAction(coupon: CouponModel): CouponAction {
-    return {
-        type: ActionType.GOT_SINGLE_COUPON,
-        payload: coupon,
     };
 }
 
@@ -57,9 +49,9 @@ export function deletedCouponAction(id: number): CouponAction {
     };
 }
 
-export function removeCoupons(): CouponAction {
+export function removeCompanyCoupons(): CouponAction {
     return {
-        type: ActionType.REMOVED_COUPON,
+        type: ActionType.REMOVED_COMPANY_COUPONS,
         payload: {},
     };
 }
@@ -95,7 +87,7 @@ export function companyReducer(
             );
             break;
         }
-        case ActionType.REMOVED_COUPON: {
+        case ActionType.REMOVED_COMPANY_COUPONS: {
             newState.coupons = [];
             break;
         }
