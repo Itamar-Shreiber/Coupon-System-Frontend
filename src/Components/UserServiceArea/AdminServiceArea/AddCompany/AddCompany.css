@@ -1,0 +1,38 @@
+.AddCompany {
+}
+
+.AddCompany form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.AddCompany input[type="text"],
+input[type="number"],
+input[type="email"]
+{
+    width: 200px;
+    height: 25px;
+}
+
+.AddCompany button {
+    width: 100%;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.AddCompany button:hover {
+    color: black;
+}
+.AddCompany button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.AddCompany span {
+    color: red;
+    font-weight: 700;
+}

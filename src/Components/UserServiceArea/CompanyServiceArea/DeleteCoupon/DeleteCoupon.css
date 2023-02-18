@@ -1,0 +1,43 @@
+.DeleteCoupon {
+	
+}
+.redColor{
+	color: red;
+}
+
+.DeleteCoupon form{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.DeleteCoupon input[type ="number"] {
+width: 200px;
+height: 25px;
+}
+
+.DeleteCoupon button{
+width: 60px;
+height: 25px;
+margin: 5px;
+background-color: #1c3c5c;
+color: white;
+border: none;
+font-size: medium;
+
+}
+.DeleteCoupon button:hover{
+color: black;
+}
+.DeleteCoupon button:disabled{
+cursor: not-allowed;
+color: black;
+}
+
+.DeleteCoupon span{
+color: red;
+font-weight: 700;
+}
+

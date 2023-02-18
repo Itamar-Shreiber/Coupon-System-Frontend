@@ -1,0 +1,37 @@
+.UpdateCustomer {
+	
+}
+.UpdateCustomer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.UpdateCustomer input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 200px;
+    height: 25px;
+}
+
+.UpdateCustomer button {
+    width: 100%;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.UpdateCustomer button:hover {
+    color: black;
+}
+.UpdateCustomer button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.UpdateCustomer span {
+    color: red;
+    font-weight: 700;
+}

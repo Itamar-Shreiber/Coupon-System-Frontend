@@ -1,0 +1,20 @@
+.GetAllCompanies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.GetAllCompaniesH1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.NavigateCompany{
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: row;
+    padding: 0;
+}

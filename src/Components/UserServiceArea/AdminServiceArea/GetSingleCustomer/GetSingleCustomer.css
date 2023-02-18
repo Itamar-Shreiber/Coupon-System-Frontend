@@ -1,0 +1,39 @@
+.GetSingleCustomer {
+	
+}
+
+.GetSingleCustomer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.GetSingleCustomer input[type="text"],
+input[type="number"],
+input[type="email"]
+{
+    width: 200px;
+    height: 25px;
+}
+
+.GetSingleCustomer button {
+    width: 100%;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.GetSingleCustomer button:hover {
+    color: black;
+}
+.GetSingleCustomer button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.GetSingleCustomer span {
+    color: red;
+    font-weight: 700;
+}

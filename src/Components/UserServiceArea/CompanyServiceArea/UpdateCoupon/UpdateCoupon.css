@@ -1,0 +1,38 @@
+.UpdateCoupon {
+	
+}
+
+.UpdateCoupon form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.UpdateCoupon input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 200px;
+    height: 25px;
+}
+
+.UpdateCoupon button {
+    width: 100%;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.UpdateCoupon button:hover {
+    color: black;
+}
+.UpdateCoupon button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.UpdateCoupon span {
+    color: red;
+    font-weight: 700;
+}

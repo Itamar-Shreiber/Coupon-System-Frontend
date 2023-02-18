@@ -1,0 +1,39 @@
+.GetSingleCompany {
+	
+}
+
+.GetSingleCompany form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.GetSingleCompany input[type="text"],
+input[type="number"],
+input[type="email"]
+{
+    width: 200px;
+    height: 25px;
+}
+
+.GetSingleCompany button {
+    width: 100%;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.GetSingleCompany button:hover {
+    color: black;
+}
+.GetSingleCompany button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.GetSingleCompany span {
+    color: red;
+    font-weight: 700;
+}

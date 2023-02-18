@@ -1,0 +1,43 @@
+.DeleteCompany {
+	
+}
+.redColor{
+	color: red;
+}
+
+.DeleteCompany form{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.DeleteCompany input[type ="number"] {
+width: 200px;
+height: 25px;
+}
+
+.DeleteCompany button{
+width: 60px;
+height: 25px;
+margin: 5px;
+background-color: #1c3c5c;
+color: white;
+border: none;
+font-size: medium;
+
+}
+.DeleteCompany button:hover{
+color: black;
+}
+.DeleteCompany button:disabled{
+cursor: not-allowed;
+color: black;
+}
+
+.DeleteCompany span{
+color: red;
+font-weight: 700;
+}
+

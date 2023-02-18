@@ -1,0 +1,49 @@
+.CompanyCoupons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.CompanyCouponsH1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divButton{
+display: flex;
+justify-content: space-around;
+}
+
+.button1:hover{
+display: flex;
+align-items: center;
+justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.NavigateCoupon{
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: row;
+    padding: 0;
+}
+
+.Button{
+    font-size: 20px;
+    width: 400px;
+    height: 40px;
+background: rgba(255, 255, 255, 0.5);}
+.Button:hover{
+    font-size: 20px;
+    font-weight:800;
+    width: 400px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}

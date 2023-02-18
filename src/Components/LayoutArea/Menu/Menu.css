@@ -1,0 +1,17 @@
+.Menu {
+    border: 2px solid;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 5px 10px #36626a;
+}
+.Menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color:#d1d1d1;
+}
+.Menu a:hover {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+}

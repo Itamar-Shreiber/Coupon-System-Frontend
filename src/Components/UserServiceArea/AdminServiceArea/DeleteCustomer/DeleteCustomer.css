@@ -1,0 +1,43 @@
+.DeleteCustomer {
+	
+}
+.redColor{
+	color: red;
+}
+
+.DeleteCustomer form{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.DeleteCustomer input[type ="number"] {
+width: 200px;
+height: 25px;
+}
+
+.DeleteCustomer button{
+width: 60px;
+height: 25px;
+margin: 5px;
+background-color: #1c3c5c;
+color: white;
+border: none;
+font-size: medium;
+
+}
+.DeleteCustomer button:hover{
+color: black;
+}
+.DeleteCustomer button:disabled{
+cursor: not-allowed;
+color: black;
+}
+
+.DeleteCustomer span{
+color: red;
+font-weight: 700;
+}
+

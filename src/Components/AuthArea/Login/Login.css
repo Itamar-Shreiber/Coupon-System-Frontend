@@ -1,0 +1,36 @@
+.Login {
+}
+.Login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Login button {
+    width: 205px;
+    height: 25px;
+    margin: 5px;
+    background-color: #1c3c5c;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.Login button:hover {
+    font-weight: 700;
+}
+.Login button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
+
+.Login span {
+    color: red;
+    font-weight: 700;
+}
+.AddCoupon input[type="text"],
+input[type="password"],
+select {
+    width: 200px;
+    height: 25px;
+}
