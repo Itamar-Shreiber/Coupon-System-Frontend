@@ -1,11 +1,10 @@
 import "./Developer.css";
 
-import About from './../About/About';
+import About from "./../About/About";
 
 function Developer(): JSX.Element {
     return (
         <div className="Developer col">
-    
             <h1>About Me</h1>
             <p>
                 As a developer, I have a passion for creating innovative and

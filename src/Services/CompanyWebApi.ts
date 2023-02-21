@@ -39,7 +39,7 @@ class CompanyWebApi {
     ): Promise<AxiosResponse<CouponModel[]>> {
         const token2 = store.getState().userReducer.user.token;
         const headers = { authorization: token2 };
-        const url = global.urls.company + "/token/" + token + "/coupons";
+        const url = global.urls.company + "/" + token + "/coupons";
         return axios.get<CouponModel[]>(url, { headers });
     }
 

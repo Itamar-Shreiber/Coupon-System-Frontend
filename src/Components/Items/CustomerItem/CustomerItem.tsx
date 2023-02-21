@@ -36,10 +36,10 @@ function CustomerItem(props: CustomerItemProps): JSX.Element {
                     >
                         <VscTrash size={24} />
                     </button>
-                    
-                    <button 
-                    onClick={() => updateCustomer(props.customer.id)}
-                    className="button"
+
+                    <button
+                        onClick={() => updateCustomer(props.customer.id)}
+                        className="button"
                     >
                         <BiEdit size={24} />
                     </button>

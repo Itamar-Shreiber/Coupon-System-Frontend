@@ -5,7 +5,7 @@ function Footer(): JSX.Element {
     return (
         <div className="Footer row">
             <p>&copy; Itamar Shreiber</p>
-			 <SocialMedia/>
+            <SocialMedia />
         </div>
     );
 }

@@ -19,7 +19,9 @@ export interface CustomerAction {
 }
 
 // Step 4 - creator functions - gets payload regarding the action
-export function gotAllCustomerPurchasedCouponsAction(tasks: CustomerModel[]): CustomerAction {
+export function gotAllCustomerPurchasedCouponsAction(
+    tasks: CustomerModel[]
+): CustomerAction {
     return {
         type: ActionType.GOT_ALL_CUSTOMER_COUPONS,
         payload: tasks,
@@ -34,11 +36,10 @@ export function PurchasedCouponAction(task: CustomerModel): CustomerAction {
 }
 export function removeCustomerCoupons(): CustomerAction {
     return {
-      type: ActionType.REMOVED_CUSTOMER_COUPONS,
-      payload: {},
+        type: ActionType.REMOVED_CUSTOMER_COUPONS,
+        payload: {},
     };
-  }
-
+}
 
 // Step 5 - Reducer function perform the required action
 export function customerReducer(
@@ -58,7 +59,7 @@ export function customerReducer(
         case ActionType.REMOVED_CUSTOMER_COUPONS: {
             newState.coupons = [];
             break;
-          }
+        }
     }
     return newState;
 }

@@ -7,10 +7,9 @@ import "./AddCoupon.css";
 import companyWebApi from "../../../../Services/CompanyWebApi";
 import { CouponPayloadModel } from "../../../../Models/Model";
 import notify from "../../../../Services/ErrorMessage";
-import store from './../../../../Redux/Store';
+import store from "./../../../../Redux/Store";
 import { useState } from "react";
-import { userReducer } from './../../../../Redux/UserAppState';
-
+import { userReducer } from "./../../../../Redux/UserAppState";
 
 function AddCoupon(): JSX.Element {
     const navigate = useNavigate();
@@ -28,7 +27,7 @@ function AddCoupon(): JSX.Element {
             .default(() => new Date()),
         endDate: yup
             .date()
-            .min(yup.ref('startDate'), 'End date must be after start date')
+            .min(yup.ref("startDate"), "End date must be after start date")
             .default(new Date())
             .typeError("You must specify a endDate")
             .required("EndDate is required")
@@ -56,7 +55,7 @@ function AddCoupon(): JSX.Element {
         resolver: yupResolver(schema),
     });
 
-    const[user,setUser]=useState(store.getState().userReducer.user)
+    const [user, setUser] = useState(store.getState().userReducer.user);
 
     const postCoupon = async (coupon: CouponPayloadModel) => {
         console.log(coupon);
@@ -89,7 +88,7 @@ function AddCoupon(): JSX.Element {
                     placeholder="Title..."
                 />
 
-{errors.category ? (
+                {errors.category ? (
                     <span>{errors.category?.message}</span>
                 ) : (
                     <label htmlFor="category">Category</label>
@@ -103,7 +102,6 @@ function AddCoupon(): JSX.Element {
                     <option value="VACATION">VACATION</option>
                     <option value="RESTAURANT">RESTAURANT</option>
                 </select>
-         
 
                 {errors.description ? (
                     <span>{errors.description?.message}</span>

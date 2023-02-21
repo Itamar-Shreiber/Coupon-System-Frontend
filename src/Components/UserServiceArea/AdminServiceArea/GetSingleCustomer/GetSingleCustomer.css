@@ -16,7 +16,7 @@ input[type="email"]
     height: 25px;
 }
 
-.GetSingleCustomer button {
+.GetSingleCustomer .find {
     width: 100%;
     height: 25px;
     margin: 5px;
@@ -34,6 +34,6 @@ input[type="email"]
 }
 
 .GetSingleCustomer span {
-    color: red;
+    color: black;
     font-weight: 700;
 }

@@ -1,4 +1,4 @@
-.About >p{
+.About > p {
     display: flex;
     justify-content: left;
     padding-left: 80px;
@@ -6,6 +6,6 @@
     font-size: 30px;
     text-align: center;
 }
-.About >h1{
-font-size: 45px;
+.About > h1 {
+    font-size: 45px;
 }

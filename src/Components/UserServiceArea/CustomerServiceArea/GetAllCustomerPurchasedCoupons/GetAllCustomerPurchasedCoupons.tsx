@@ -7,26 +7,26 @@ import MyCouponsItem from "../../../Items/MyCouponsItem/MyCouponsItem";
 import store from "../../../../Redux/Store";
 
 function GetAllCustomerPurchasedCoupons(): JSX.Element {
-  const [coupons, setCoupons] = useState<CouponModel[]>([]);
-  const [user, setUser] = useState(store.getState().userReducer.user);
+    const [coupons, setCoupons] = useState<CouponModel[]>([]);
+    const [user, setUser] = useState(store.getState().userReducer.user);
 
-  useEffect(() => {
-    customerWebApi
+    useEffect(() => {
+        customerWebApi
 
-      .getCustomerPurchaseCoupons(user.token)
-      .then((res) => setCoupons(res.data))
-      .catch((err) => notify.error(err));
-  }, []);
-  return (
-    <div>
-      <h1 className="GetAllCustomerPurchasedCouponsH1">My Coupons</h1>
-      <div>
-        {coupons.map((c, idx) => (
-          <MyCouponsItem key={"c" + idx} coupon={c} />
-        ))}
-      </div>
-    </div>
-  );
+            .getCustomerPurchaseCoupons(user.token)
+            .then((res) => setCoupons(res.data))
+            .catch((err) => notify.error(err));
+    }, []);
+    return (
+        <div>
+            <h1 className="GetAllCustomerPurchasedCouponsH1">My Coupons</h1>
+            <div>
+                {coupons.map((c, idx) => (
+                    <MyCouponsItem key={"c" + idx} coupon={c} />
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default GetAllCustomerPurchasedCoupons;

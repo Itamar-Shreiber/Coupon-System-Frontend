@@ -21,29 +21,30 @@ function CompanyItem(props: CompanyItemProps): JSX.Element {
     };
 
     return (
-
-            <div className="card col">
-                <h1>{props.company.id}</h1>
-                <hr />
+        <div className="card col">
+            <h1>{props.company.id}</h1>
+            <hr />
+            <div className="h1">
                 <span>{props.company.name}</span>
-                <hr />
-                <span>{props.company.email}</span>
-                <hr />
-                <div className="divButton">
-                    <button
-                        onClick={() => deleteCompany(props.company.id)}
-                        className="button1"
-                    >
-                        <VscTrash size={24} />
-                    </button>
-                    <button onClick={() => updateCompany(props.company.id)}
-                    
-                     className="button1">
-                        <BiEdit size={24} />
-                    </button>
-                </div>
             </div>
-      
+            <hr />
+            <span>{props.company.email}</span>
+            <hr />
+            <div className="divButton">
+                <button
+                    onClick={() => deleteCompany(props.company.id)}
+                    className="button1"
+                >
+                    <VscTrash size={24} />
+                </button>
+                <button
+                    onClick={() => updateCompany(props.company.id)}
+                    className="button1"
+                >
+                    <BiEdit size={24} />
+                </button>
+            </div>
+        </div>
     );
 }
 

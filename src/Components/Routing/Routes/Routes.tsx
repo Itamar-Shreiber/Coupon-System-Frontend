@@ -24,41 +24,47 @@ import Login from "../../AuthArea/Login/Login";
 import Logout from "../../AuthArea/Logout/Logout";
 
 function Routing(): JSX.Element {
-  return (
-    <div className="Routing">
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="home" element={<Home />} />
-        <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
+    return (
+        <div className="Routing">
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="home" element={<Home />} />
+                <Route index element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/logout" element={<Logout />} />
 
-        <Route path="getAllCompanies" element={<GetAllCompanies />} />
+                <Route path="getAllCompanies" element={<GetAllCompanies />} />
 
-        <Route path="getAllCustomers" element={<GetAllCustomers />} />
-        <Route path="getSingleCompany" element={<GetSingleCompany />} />
-        <Route path="getSingleCustomer" element={<GetSingleCustomer />} />
-        <Route path="addCompany" element={<AddCompany />} />
-        <Route path="updateCompany/:id" element={<UpdateCompany />} />
-        <Route path="deleteCompany/:id" element={<DeleteCompany />} />
-        <Route path="addCustomer" element={<AddCustomer />} />
-        <Route path="updateCustomer/:id" element={<UpdateCustomer />} />
-        <Route path="deleteCustomer/:id" element={<DeleteCustomer />} />
+                <Route path="getAllCustomers" element={<GetAllCustomers />} />
+                <Route path="getSingleCompany" element={<GetSingleCompany />} />
+                <Route
+                    path="getSingleCustomer"
+                    element={<GetSingleCustomer />}
+                />
+                <Route path="addCompany" element={<AddCompany />} />
+                <Route path="updateCompany/:id" element={<UpdateCompany />} />
+                <Route path="deleteCompany/:id" element={<DeleteCompany />} />
+                <Route path="addCustomer" element={<AddCustomer />} />
+                <Route path="updateCustomer/:id" element={<UpdateCustomer />} />
+                <Route path="deleteCustomer/:id" element={<DeleteCustomer />} />
 
-        <Route path="addCoupon" element={<AddCoupon />} />
-        <Route path="updateCoupon/:id" element={<UpdateCoupon />} />
-        <Route path="deleteCoupon/:id" element={<DeleteCoupon />} />
-        <Route path="companyCoupons" element={<CompanyCoupons />} />
+                <Route path="addCoupon" element={<AddCoupon />} />
+                <Route path="updateCoupon/:id" element={<UpdateCoupon />} />
+                <Route path="deleteCoupon/:id" element={<DeleteCoupon />} />
+                <Route path="companyCoupons" element={<CompanyCoupons />} />
 
-        <Route path="purchase" element={<PurchaseCoupon />} />
-        <Route path="myCoupons" element={<GetAllCustomerPurchasedCoupons />} />
+                <Route path="purchase" element={<PurchaseCoupon />} />
+                <Route
+                    path="myCoupons"
+                    element={<GetAllCustomerPurchasedCoupons />}
+                />
 
-        <Route path="about" element={<About />} />
-        <Route path="developer" element={<Developer />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-    </div>
-  );
+                <Route path="about" element={<About />} />
+                <Route path="developer" element={<Developer />} />
+                <Route path="*" element={<Page404 />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default Routing;

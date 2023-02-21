@@ -1,6 +1,6 @@
-.CouponItem {
+/* .CouponItem {
 	
-}
+} */
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -9,16 +9,20 @@
     padding: 20px;
     text-align: center;
     font-family: arial;
-    width:100%;
+    width: 100%;
     flex-wrap: wrap;
-  }
-  
-  .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.price {
     color: grey;
     font-size: 22px;
-  }
-  
-  .card button {
+}
+
+.card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -28,18 +32,17 @@
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-  }
-  
-  .card button:hover {
-    opacity: 0.7;
-  }
+}
 
-  .good{
+.card button:hover {
+    opacity: 0.7;
+}
+.good {
     color: green;
 }
-.avg{
+.avg {
     color: yellow;
 }
-.bad{
+.bad {
     color: red;
 }

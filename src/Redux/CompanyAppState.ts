@@ -21,7 +21,9 @@ export interface CouponAction {
 }
 
 // Step 4 - creator functions - gets payload regarding the action
-export function gotAllCompanyCouponsAction(coupons: CouponModel[]): CouponAction {
+export function gotAllCompanyCouponsAction(
+    coupons: CouponModel[]
+): CouponAction {
     return {
         type: ActionType.GOT_ALL_COMPANY_COUPONS,
         payload: coupons,

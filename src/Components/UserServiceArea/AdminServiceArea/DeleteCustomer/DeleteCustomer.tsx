@@ -29,8 +29,8 @@ function DeleteCustomer(): JSX.Element {
             <h2 className="redColor">Delete customer {customerId}</h2>
             <h2>Are you sure?</h2>
             <div className="row">
-            <button onClick={cancel}>cancel</button>
-            <button onClick={deleteCustomer}>yes</button>
+                <button onClick={cancel}>cancel</button>
+                <button onClick={deleteCustomer}>yes</button>
             </div>
         </div>
     );

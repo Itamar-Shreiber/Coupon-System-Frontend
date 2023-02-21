@@ -9,42 +9,42 @@ import store from "../../../../Redux/Store";
 import { gotAllCompaniesAction } from "../../../../Redux/AdminAppState";
 
 function GetAllCompanies(): JSX.Element {
-  const navigate = useNavigate();
-  const addCompany = () => {
-    navigate("/addCompany");
-  };
-  const getSingleCompany = () => {
-    navigate("/getSingleCompany");
-  };
-  const [companies, setCompanies] = useState<CompanyModel[]>([]);
-  useEffect(() => {
-    adminWebApi
-      .getAllCompanies()
-      .then((res) => {
-        store.dispatch(gotAllCompaniesAction(res.data));
-        setCompanies(res.data);
-      })
+    const navigate = useNavigate();
+    const addCompany = () => {
+        navigate("/addCompany");
+    };
+    const getSingleCompany = () => {
+        navigate("/getSingleCompany");
+    };
+    const [companies, setCompanies] = useState<CompanyModel[]>([]);
+    useEffect(() => {
+        adminWebApi
+            .getAllCompanies()
+            .then((res) => {
+                store.dispatch(gotAllCompaniesAction(res.data));
+                setCompanies(res.data);
+            })
 
-      .catch((err) => notify.error(err));
-  }, []);
+            .catch((err) => notify.error(err));
+    }, []);
 
-  return (
-    <div>
-      <h1 className="GetAllCompaniesH1">My companies</h1>
-      <div className="NavigateCompany">
-        <button className="Button" onClick={addCompany}>
-          Add Company
-        </button>
-        <button className="Button" onClick={getSingleCompany}>
-          Find Company
-        </button>
-      </div>
-      <div className="GetAllCompanies">
-        {companies.map((c, idx) => (
-          <CompanyItem key={"c" + idx} company={c} />
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <h1 className="GetAllCompaniesH1">My companies</h1>
+            <div className="NavigateCompany">
+                <button className="Button" onClick={addCompany}>
+                    Add Company
+                </button>
+                <button className="Button" onClick={getSingleCompany}>
+                    Find Company
+                </button>
+            </div>
+            <div className="GetAllCompanies">
+                {companies.map((c, idx) => (
+                    <CompanyItem key={"c" + idx} company={c} />
+                ))}
+            </div>
+        </div>
+    );
 }
 export default GetAllCompanies;

@@ -12,8 +12,14 @@ function AddCompany(): JSX.Element {
     const navigate = useNavigate();
     const schema = yup.object().shape({
         name: yup.string().required("Name is required"),
-        email: yup.string().required("Email is required"),
-        password: yup.string().required("Password is required"),
+        email: yup
+            .string()
+            .required("Email is required")
+            .email("Invalid email pattern"),
+        password: yup
+            .string()
+            .required("Password is required")
+            .min(4, "password length minimum is 4 letters"),
     });
 
     const {

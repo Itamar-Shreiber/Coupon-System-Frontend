@@ -18,34 +18,36 @@ function GetSingleCompany(): JSX.Element {
     );
 
     const [outputValue, setOutputValue] = useState<number>(0);
-        const { register, handleSubmit } = useForm<FormValues>();
-        const [companyToShow, setCompanyToShow] = useState<CompanyModel[]>([]);
+    const { register, handleSubmit } = useForm<FormValues>();
+    const [companyToShow, setCompanyToShow] = useState<CompanyModel[]>([]);
 
- const handleChange = async (data: FormValues) => {
-     setOutputValue(data.companyId);
- };
+    const handleChange = async (data: FormValues) => {
+        setOutputValue(data.companyId);
+    };
 
- useEffect(() => {
-    if (outputValue !== 0) {
-     adminWebApi
-         .getSingleCompany(outputValue)
-         .then((res) => {
-             setCompanyToShow([res.data]);
-             notify.success("company found");
-         })
-         .catch((err) => {
-             setCompanyToShow([]);
-             notify.error(err);
-         });
+    useEffect(() => {
+        if (outputValue !== 0) {
+            adminWebApi
+                .getSingleCompany(outputValue)
+                .then((res) => {
+                    setCompanyToShow([res.data]);
+                    notify.success("company found");
+                })
+                .catch((err) => {
+                    setCompanyToShow([]);
+                    notify.error(err);
+                });
         }
- }, [outputValue]);
+    }, [outputValue]);
     return (
         <div className="GetSingleCompany col">
             <h1>Find Company</h1>
             <div>
                 <form onSubmit={handleSubmit(handleChange)}>
                     <input {...register("companyId")} type="number" />
-                    <button type="submit">Find</button>
+                    <button className="find" type="submit">
+                        Find
+                    </button>
                 </form>
             </div>
             <div>

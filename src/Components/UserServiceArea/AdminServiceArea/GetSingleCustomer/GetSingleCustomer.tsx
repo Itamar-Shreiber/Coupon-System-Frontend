@@ -45,7 +45,9 @@ function GetSingleCustomer(): JSX.Element {
             <div>
                 <form onSubmit={handleSubmit(handleChange)}>
                     <input {...register("customerId")} type="number" />
-                    <button type="submit">Find</button>
+                    <button className="find" type="submit">
+                        Find
+                    </button>
                 </form>
             </div>
             <div>

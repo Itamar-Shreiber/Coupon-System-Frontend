@@ -1,7 +1,14 @@
 import axios, { AxiosResponse } from "axios";
-import { CompanyModel, CompanyPayloadModel, CouponModel, CustomerModel, CustomerPayloadModel, CustomerUpdateModel } from "../Models/Model";
+import {
+    CompanyModel,
+    CompanyPayloadModel,
+    CouponModel,
+    CustomerModel,
+    CustomerPayloadModel,
+    CustomerUpdateModel,
+} from "../Models/Model";
 import global from "./ConstantService";
-import { CompanyUpdateModel } from './../Models/Model';
+import { CompanyUpdateModel } from "./../Models/Model";
 import store from "../Redux/Store";
 
 class AdminWebApi {
@@ -9,23 +16,25 @@ class AdminWebApi {
         company: CompanyPayloadModel
     ): Promise<AxiosResponse<any>> => {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
+        const headers = { authorization: token };
         const url = global.urls.admin + "/companies";
-     
+
         return axios.post<any>(url, company, { headers });
     };
     public addCustomer = (
         customer: CustomerPayloadModel
     ): Promise<AxiosResponse<any>> => {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
+        const headers = { authorization: token };
         const url = global.urls.admin + "/customers";
-      
+
         return axios.post<any>(url, customer, { headers });
     };
-    public deleteCustomer = (customerId: number): Promise<AxiosResponse<any>> => {
+    public deleteCustomer = (
+        customerId: number
+    ): Promise<AxiosResponse<any>> => {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
+        const headers = { authorization: token };
         const url = global.urls.admin + "/customers" + "/" + customerId;
         return axios.delete<any>(url, { headers });
     };
@@ -37,7 +46,7 @@ class AdminWebApi {
         const url = global.urls.admin + "/customers/" + customerId;
         const token = store.getState().userReducer.user.token;
         const headers = { authorization: token };
-        return axios.put<CustomerModel>(url, customer, { headers});
+        return axios.put<CustomerModel>(url, customer, { headers });
     };
 
     public updateCompany = (
@@ -45,15 +54,15 @@ class AdminWebApi {
         company: CompanyUpdateModel
     ): Promise<AxiosResponse<CompanyModel>> => {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
-        const url = global.urls.admin+"/companies/"+companyId;
+        const headers = { authorization: token };
+        const url = global.urls.admin + "/companies/" + companyId;
         console.log(url);
         return axios.put<CompanyModel>(url, company, { headers });
     };
 
     public deleteCompany = (companyId: number): Promise<AxiosResponse<any>> => {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
+        const headers = { authorization: token };
         const url = global.urls.admin + "/companies" + "/" + companyId;
         console.log(url);
         return axios.delete<any>(url, { headers });
@@ -61,8 +70,8 @@ class AdminWebApi {
 
     public getAllCompanies(): Promise<AxiosResponse<CompanyModel[]>> {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
-        const url =global.urls.admin + "/companies";
+        const headers = { authorization: token };
+        const url = global.urls.admin + "/companies";
         return axios.get<CompanyModel[]>(url, { headers });
     }
 
@@ -70,31 +79,36 @@ class AdminWebApi {
         companyId: number
     ): Promise<AxiosResponse<CompanyModel>> {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token }
-        const url =global.urls.admin +"/companies"+ "/"+companyId;
+        const headers = { authorization: token };
+        const url = global.urls.admin + "/companies" + "/" + companyId;
         return axios.get<CompanyModel>(url, { headers });
-   
     }
 
     public getSingleCustomer(
         customerId: number
     ): Promise<AxiosResponse<CustomerModel>> {
         const token = store.getState().userReducer.user.token;
-        const headers = { "authorization": token } 
-        return axios.get<CustomerModel>(global.urls.admin +"/customers"+ "/"+customerId, { headers });
-   
+        const headers = { authorization: token };
+        return axios.get<CustomerModel>(
+            global.urls.admin + "/customers" + "/" + customerId,
+            { headers }
+        );
     }
 
     public getAllCoupons(): Promise<AxiosResponse<CouponModel[]>> {
         const token = store.getState().userReducer.user.token;
-         const headers = { "authorization": token } 
-        return axios.get<CouponModel[]>(global.urls.admin + "/coupons", { headers });
+        const headers = { authorization: token };
+        return axios.get<CouponModel[]>(global.urls.admin + "/coupons", {
+            headers,
+        });
     }
 
     public myCustomers(): Promise<AxiosResponse<CustomerModel[]>> {
         const token = store.getState().userReducer.user.token;
-         const headers = { "authorization": token } 
-        return axios.get<CustomerModel[]>(global.urls.admin + "/customers", { headers });
+        const headers = { authorization: token };
+        return axios.get<CustomerModel[]>(global.urls.admin + "/customers", {
+            headers,
+        });
     }
 }
 

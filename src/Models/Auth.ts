@@ -13,5 +13,5 @@ export interface Credentials {
 export interface User {
     token: string;
     email: string;
-    clientType:string;
+    clientType: string;
 }
