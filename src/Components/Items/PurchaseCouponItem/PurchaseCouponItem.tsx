@@ -19,7 +19,7 @@ function PurchaseCouponItem(props: PurchaseCouponItemProps): JSX.Element {
 
     const addCouponToCustomer = async () => {
         await customerWebApi
-            .purchaseCoupon(user.token, props.coupon.id)
+            .purchaseCoupon(props.coupon.id)
             .then((res) => {
                 notify.success("coupon purchased");
                 navigate("/myCoupons");
@@ -33,16 +33,16 @@ function PurchaseCouponItem(props: PurchaseCouponItemProps): JSX.Element {
         <div className="card">
             <img src={props.coupon.image} alt="Coupon" />
             <h1>{props.coupon.title}</h1>
-            <p className="price">${props.coupon.price}</p>
-            <span>{props.coupon.company.name}</span>
+            <p className="price">Price: ${props.coupon.price}</p>
+            <span>Company: {props.coupon.company.name}</span>
             <hr />
             <span>{props.coupon.category}</span>
             <hr />
             <span>{props.coupon.description}</span>
             <hr />
-            <span>{props.coupon.startDate.toString()}</span>
+            <span>Start: {props.coupon.startDate.toString()}</span>
             <hr />
-            <span>{props.coupon.endDate.toString()}</span>
+            <span>End: {props.coupon.endDate.toString()}</span>
             <hr />
             <span
                 className={

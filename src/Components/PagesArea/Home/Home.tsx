@@ -11,6 +11,7 @@ function Home(): JSX.Element {
                     src="https://media.giphy.com/media/Ig6xnt4nFTjqoc1oyN/giphy.gif"
                     alt=""
                 />
+                
             </div>
         </div>
     );

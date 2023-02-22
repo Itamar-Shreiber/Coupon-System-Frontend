@@ -1,12 +1,10 @@
 import { CompanyModel, CustomerModel } from "../Models/Model";
 
 export class AdminAppState {
-    // Step 1 - create the app state object
     public companies: CompanyModel[] = [];
     public customers: CustomerModel[] = [];
 }
 
-// Step 2 - define all required actions
 export enum ActionType {
     GOT_ALL_COMPANIES = "GOT_ALL_COMPANIES",
     GOT_SINGLE_COMPANY = "GOT_SINGLE_COMPANY",
@@ -22,13 +20,11 @@ export enum ActionType {
     REMOVED_CUSTOMERS = "REMOVED_CUSTOMERS",
 }
 
-// Step 3 - define what is action in terms of data
 export interface AdminAction {
     type: ActionType;
     payload: any;
 }
 
-// Step 4 - creator functions - gets payload regarding the action
 export function gotAllCompaniesAction(companies: CompanyModel[]): AdminAction {
     return {
         type: ActionType.GOT_ALL_COMPANIES,
@@ -113,12 +109,11 @@ export function removeCustomers(): AdminAction {
     };
 }
 
-// Step 5 - Reducer function perform the required action
 export function adminReducer(
     currentState: AdminAppState = new AdminAppState(),
     action: AdminAction
 ): AdminAppState {
-    const newState = { ...currentState }; //Spread Operator // Copy
+    const newState = { ...currentState }; 
     switch (action.type) {
         case ActionType.GOT_ALL_COMPANIES: {
             newState.companies = action.payload;

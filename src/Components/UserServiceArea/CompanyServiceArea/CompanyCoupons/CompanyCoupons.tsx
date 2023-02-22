@@ -19,10 +19,10 @@ function CompanyCoupons(): JSX.Element {
     const [origin, setOrigin] = useState<CouponModel[]>([]);
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [selectedPrice, setSelectedPrice] = useState(300);
-    const [user, setUser] = useState(store.getState().userReducer.user);
+    
     useEffect(() => {
         companyWebApi
-            .getAllCompanyCoupons(user.token)
+            .getAllCompanyCoupons()
             .then((res) => {
                 store.dispatch(gotAllCompanyCouponsAction(res.data));
                 setCoupons(res.data);
@@ -102,7 +102,7 @@ function CompanyCoupons(): JSX.Element {
     };
     return (
         <div>
-            <div className="PurchaseCouponArea col">
+            <div className="PurchaseCoupon col">
                 <label htmlFor="category">Filter by category</label>
                 <select id="category" onChange={handleCategoryChange}>
                     {categoryOptions.map((op, idx) => (

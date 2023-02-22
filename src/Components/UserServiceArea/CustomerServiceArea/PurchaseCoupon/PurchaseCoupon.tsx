@@ -95,7 +95,7 @@ function PurchaseCoupon(): JSX.Element {
 
     return (
         <div>
-            <div className="PurchaseCouponArea col">
+            <div className="PurchaseCoupon col">
                 <label htmlFor="category">Filter by category</label>
                 <select id="category" onChange={handleCategoryChange}>
                     {categoryOptions.map((op, idx) => (

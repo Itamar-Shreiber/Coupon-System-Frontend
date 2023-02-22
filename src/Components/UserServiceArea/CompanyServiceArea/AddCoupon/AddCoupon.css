@@ -9,6 +9,7 @@
 }
 .AddCoupon input[type="text"],
 input[type="number"],
+input[type="double"],
 input[type="date"] {
     width: 200px;
     height: 25px;

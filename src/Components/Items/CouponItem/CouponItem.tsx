@@ -22,16 +22,16 @@ function CouponItem(props: CouponItemProps): JSX.Element {
         <div className="card col">
             <img src={props.coupon.image} alt="Coupon" />
             <h1>{props.coupon.title}</h1>
-            <p className="price">${props.coupon.price}</p>
-            <span>{props.coupon.company.name}</span>
+            <p className="price">Price: ${props.coupon.price}</p>
+            <span>Company: {props.coupon.company.name}</span>
             <hr />
             <span>{props.coupon.category}</span>
             <hr />
             <span>{props.coupon.description}</span>
             <hr />
-            <span>{props.coupon.startDate.toString()}</span>
+            <span>Start: {props.coupon.startDate.toString()}</span>
             <hr />
-            <span>{props.coupon.endDate.toString()}</span>
+            <span>End: {props.coupon.endDate.toString()}</span>
             <hr />
             <span
                 className={

@@ -22,8 +22,10 @@ import AddCustomer from "../../UserServiceArea/AdminServiceArea/AddCustomer/AddC
 import UpdateCoupon from "../../UserServiceArea/CompanyServiceArea/UpdateCoupon/UpdateCoupon";
 import Login from "../../AuthArea/Login/Login";
 import Logout from "../../AuthArea/Logout/Logout";
+import store from "../../../Redux/Store";
 
 function Routing(): JSX.Element {
+    const token = store.getState().userReducer.user.token;
     return (
         <div className="Routing">
             <Routes>
@@ -32,8 +34,12 @@ function Routing(): JSX.Element {
                 <Route index element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/logout" element={<Logout />} />
+         
+                  
+                        <Route path="getAllCompanies" element={<GetAllCompanies />}
+                        />
+        
 
-                <Route path="getAllCompanies" element={<GetAllCompanies />} />
 
                 <Route path="getAllCustomers" element={<GetAllCustomers />} />
                 <Route path="getSingleCompany" element={<GetSingleCompany />} />

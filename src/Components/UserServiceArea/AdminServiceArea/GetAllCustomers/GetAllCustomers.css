@@ -1,8 +1,9 @@
 .GetAllCustomers {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:normal;
     margin: 30px;
+    padding: 30px;
     flex-wrap: wrap;
 }
 

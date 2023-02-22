@@ -1,5 +1,5 @@
 import "./UpdateCoupon.css";
-import { useForm } from "react-hook-form";
+import { useForm, useFormState } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CouponPayloadModel } from "../../../../Models/Model";
@@ -89,9 +89,9 @@ function UpdateCoupon(): JSX.Element {
         resolver: yupResolver(schema),
     });
 
-    // const { dirtyFields } = useFormState({
-    //     control,
-    // });
+    const { dirtyFields } = useFormState({
+        control,
+    });
 
     return (
         <div className="UpdateCoupon col">
@@ -172,7 +172,7 @@ function UpdateCoupon(): JSX.Element {
                     {...register("price")}
                     id="price"
                     name="price"
-                    type="number"
+                    type="double"
                     placeholder="Price..."
                 />
 

@@ -8,26 +8,24 @@ import CustomerItem from "../../../Items/CustomerItem/CustomerItem";
 import store from "../../../../Redux/Store";
 import { gotAllCustomersAction } from "../../../../Redux/AdminAppState";
 
-
 function GetAllCustomers(): JSX.Element {
-            const navigate = useNavigate();
-            const addCustomer = () => {
-                navigate("/addCustomer");
-            };
-            const getSingleCustomer = () => {
-                navigate("/getSingleCustomer");
-            };
+    const navigate = useNavigate();
+    const addCustomer = () => {
+        navigate("/addCustomer");
+    };
+    const getSingleCustomer = () => {
+        navigate("/getSingleCustomer");
+    };
     const [customers, setCustomers] = useState<CustomerModel[]>([]);
     useEffect(() => {
         adminWebApi
             .myCustomers()
             .then((res) => {
-            store.dispatch(gotAllCustomersAction(res.data));
-            setCustomers(res.data)
-    })
-    
+                store.dispatch(gotAllCustomersAction(res.data));
+                setCustomers(res.data);
+            })
             .catch((err) => notify.error(err));
-    },[]);
+    }, []);
 
     return (
         <div>
@@ -36,10 +34,12 @@ function GetAllCustomers(): JSX.Element {
                 <button className="Button" onClick={addCustomer}>
                     Add Customer
                 </button>
-                <button className="Button" onClick={getSingleCustomer}>Find Customer</button>
+                <button className="Button" onClick={getSingleCustomer}>
+                    Find Customer
+                </button>
             </div>
-            <div className="GetAllCustomers">
-            {customers.map((c, idx) => (
+            <div className="GetAllCustomers col">
+                {customers.map((c, idx) => (
                     <CustomerItem key={"c" + idx} customer={c} />
                 ))}
             </div>

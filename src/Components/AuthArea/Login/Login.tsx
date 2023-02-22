@@ -56,6 +56,7 @@ function Login(): JSX.Element {
         <div className="Login col">
             <h2>Login</h2>
             <form onSubmit={handleSubmit(postLogin)} className="col">
+            <label htmlFor="client">Client Type</label>
                 <select {...register("clientType")} placeholder="clientType" className="select">
                     <option value="default" disabled hidden>
                         Please choose user

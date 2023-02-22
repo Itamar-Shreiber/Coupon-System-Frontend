@@ -55,12 +55,10 @@ function AddCoupon(): JSX.Element {
         resolver: yupResolver(schema),
     });
 
-    const [user, setUser] = useState(store.getState().userReducer.user);
-
     const postCoupon = async (coupon: CouponPayloadModel) => {
         console.log(coupon);
         await companyWebApi
-            .addCoupon(user.token, coupon)
+            .addCoupon(coupon)
             .then((res) => {
                 notify.success("Coupon added");
                 navigate("/companyCoupons");
@@ -151,7 +149,7 @@ function AddCoupon(): JSX.Element {
                     {...register("price")}
                     id="price"
                     name="price"
-                    type="number"
+                    type="double"
                     placeholder="Price..."
                 />
 

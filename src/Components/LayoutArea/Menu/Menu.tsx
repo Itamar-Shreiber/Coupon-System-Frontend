@@ -30,7 +30,7 @@ function Menu(): JSX.Element {
 
             {user.clientType === "CUSTOMER" && (
                 <>
-                    <CustomLink to={"purchase"}>Purchase Coupon</CustomLink>
+                    <CustomLink to={"purchase"}>Purchase</CustomLink>
                     <CustomLink to={"myCoupons"}>My coupons</CustomLink>
                 </>
             )}

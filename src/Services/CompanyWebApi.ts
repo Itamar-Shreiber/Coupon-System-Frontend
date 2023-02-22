@@ -1,16 +1,14 @@
 import axios, { AxiosResponse } from "axios";
-import { RandomUUIDOptions } from "crypto";
 import { CouponModel, CouponPayloadModel } from "../Models/Model";
 import store from "../Redux/Store";
 import global from "./ConstantService";
 
 class CompanyWebApi {
     public addCoupon = (
-        token: string,
         coupon: CouponPayloadModel
     ): Promise<AxiosResponse<any>> => {
-        const token2 = store.getState().userReducer.user.token;
-        const headers = { authorization: token2 };
+        const token = store.getState().userReducer.user.token;
+        const headers = { authorization: token };
         const url = global.urls.company + "/" + token + "/coupons";
         console.log(url);
         return axios.post<any>(url, coupon, { headers });
@@ -35,10 +33,9 @@ class CompanyWebApi {
     };
 
     public getAllCompanyCoupons(
-        token: string
     ): Promise<AxiosResponse<CouponModel[]>> {
-        const token2 = store.getState().userReducer.user.token;
-        const headers = { authorization: token2 };
+        const token = store.getState().userReducer.user.token;
+        const headers = { authorization: token };
         const url = global.urls.company + "/" + token + "/coupons";
         return axios.get<CouponModel[]>(url, { headers });
     }
@@ -46,8 +43,8 @@ class CompanyWebApi {
     public getSingleCoupon(
         couponId: number
     ): Promise<AxiosResponse<CouponModel[]>> {
-        const token2 = store.getState().userReducer.user.token;
-        const headers = { authorization: token2 };
+        const token = store.getState().userReducer.user.token;
+        const headers = { authorization: token };
         const url = global.urls.company + "/coupons/" + couponId;
         return axios.get<CouponModel[]>(url, { headers });
     }
