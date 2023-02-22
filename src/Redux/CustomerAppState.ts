@@ -16,18 +16,18 @@ export interface CustomerAction {
 }
 
 export function gotAllCustomerPurchasedCouponsAction(
-    tasks: CustomerModel[]
+    coupons: CouponModel[]
 ): CustomerAction {
     return {
         type: ActionType.GOT_ALL_CUSTOMER_COUPONS,
-        payload: tasks,
+        payload: coupons,
     };
 }
 
-export function PurchasedCouponAction(task: CustomerModel): CustomerAction {
+export function PurchasedCouponAction(coupon: CouponModel): CustomerAction {
     return {
         type: ActionType.PURCHASE_COUPON,
-        payload: task,
+        payload: coupon,
     };
 }
 export function removeCustomerCoupons(): CustomerAction {

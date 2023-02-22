@@ -39,7 +39,6 @@ function UpdateCustomer(): JSX.Element {
             .catch((err) => {
                 notify.error(err);
             });
-        console.log(customer);
     };
 
     const schema = yup.object().shape({

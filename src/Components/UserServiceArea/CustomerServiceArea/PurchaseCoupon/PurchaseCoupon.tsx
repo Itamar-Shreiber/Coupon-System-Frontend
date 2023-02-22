@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "./PurchaseCoupon.css";
 import { CouponModel } from "../../../../Models/Model";
 import customerWebApi from "../../../../Services/CustomerWebApi";
-
 import PurchaseCouponItem from "../../../Items/PurchaseCouponItem/PurchaseCouponItem";
 import notify from "../../../../Services/ErrorMessage";
+
 
 function PurchaseCoupon(): JSX.Element {
     const [coupons, setCoupons] = useState<CouponModel[]>([]);
@@ -16,12 +16,10 @@ function PurchaseCoupon(): JSX.Element {
             .couponsList()
             .then((res) => {
                 setCoupons(res.data);
-                setOrigin(res.data);
+                setOrigin(res.data); 
             })
             .catch((err) => notify.error(err));
     }, []);
-    console.log(coupons);
-    console.log(origin);
 
     const all = origin;
     const byCategory = origin.filter((c) => c.category === selectedCategory);
@@ -52,7 +50,7 @@ function PurchaseCoupon(): JSX.Element {
         { value: "All", label: "All" },
         { value: "FOOD", label: "FOOD" },
         { value: "RESTAURANT", label: "RESTAURANT" },
-        { value: "ELECTRICITYl", label: "ELECTRICITY" },
+        { value: "ELECTRICITY", label: "ELECTRICITY" },
         { value: "VACATION", label: "VACATION" },
     ];
 

@@ -66,7 +66,6 @@ function AddCoupon(): JSX.Element {
             .catch((err) => {
                 notify.error(err);
             });
-        console.log(coupon);
     };
 
     return (

@@ -132,7 +132,6 @@ export function adminReducer(
             console.log(newState.companies);
             break;
         }
-
         case ActionType.DELETED_COMPANY: {
             newState.companies = newState.companies.filter(
                 (company) => company.id !== action.payload

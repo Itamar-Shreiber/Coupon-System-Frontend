@@ -42,7 +42,6 @@ function UpdateCoupon(): JSX.Element {
             .catch((err) => {
                 notify.error(err);
             });
-        console.log(coupon);
     };
 
     const schema = yup.object().shape({
