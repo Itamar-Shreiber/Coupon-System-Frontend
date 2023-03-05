@@ -23,7 +23,7 @@ function Menu(): JSX.Element {
             {user.clientType === "COMPANY" && (
                 <>
                     <CustomLink to={"companyCoupons"}>
-                        Company coupons
+                        Coupons
                     </CustomLink>
                 </>
             )}

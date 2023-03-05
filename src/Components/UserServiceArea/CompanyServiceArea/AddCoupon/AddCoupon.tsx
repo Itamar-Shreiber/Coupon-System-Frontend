@@ -13,26 +13,26 @@ import { userReducer } from "./../../../../Redux/UserAppState";
 
 function AddCoupon(): JSX.Element {
     const navigate = useNavigate();
+    const today = new Date();
+    today.setHours(0,0,0,0);
     const schema = yup.object().shape({
         title: yup.string().required("Title is required"),
         category: yup.string().required("Category is required"),
         description: yup.string().required("Description is required"),
         startDate: yup
             .date()
-            .min(new Date(), "No option for previous time")
+            .min(today, "No option for previous time")
             .default(new Date())
             .typeError("You must specify a startDate")
             .required("StartDate is required")
-            .nullable()
-            .default(() => new Date()),
+            .nullable(),
         endDate: yup
             .date()
             .min(yup.ref("startDate"), "End date must be after start date")
             .default(new Date())
             .typeError("You must specify a endDate")
             .required("EndDate is required")
-            .nullable()
-            .default(() => new Date()),
+            .nullable(),
         price: yup
             .number()
             .moreThan(-1)

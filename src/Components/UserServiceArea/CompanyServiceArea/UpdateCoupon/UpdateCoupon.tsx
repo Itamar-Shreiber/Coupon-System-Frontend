@@ -13,6 +13,8 @@ function UpdateCoupon(): JSX.Element {
     const params = useParams();
     const id = +(params.id || 0);
     const navigate = useNavigate();
+    const today = new Date();
+    today.setHours(0,0,0,0);
     const [coupon, setCoupon] = useState(
         store
             .getState()
@@ -50,20 +52,18 @@ function UpdateCoupon(): JSX.Element {
         description: yup.string().required("Description is required"),
         startDate: yup
             .date()
-            .min(new Date(), "No option for previous time")
+            .min(today, "No option for previous time")
             .default(new Date())
             .typeError("You must specify a startDate")
             .required("StartDate is required")
-            .nullable()
-            .default(() => new Date()),
+            .nullable(),
         endDate: yup
             .date()
             .min(yup.ref("startDate"), "End date must be after start date")
             .default(new Date())
             .typeError("You must specify a endDate")
             .required("EndDate is required")
-            .nullable()
-            .default(() => new Date()),
+            .nullable(),
         price: yup
             .number()
             .moreThan(-1)

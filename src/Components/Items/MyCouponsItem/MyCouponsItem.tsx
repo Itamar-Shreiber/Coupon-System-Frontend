@@ -20,17 +20,7 @@ function MyCouponsItem(props: MyCouponsItemProps): JSX.Element {
             <hr />
             <span>{props.coupon.endDate.toString()}</span>
             <hr />
-            <span
-                className={
-                    props.coupon.amount > 5
-                        ? "good"
-                        : props.coupon.amount == 5
-                        ? "avg"
-                        : "bad"
-                }
-            >
-                {props.coupon.amount}
-            </span>
+           
         </div>
     );
 }

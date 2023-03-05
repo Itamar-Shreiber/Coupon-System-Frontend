@@ -4,6 +4,7 @@ import { CouponModel } from "../../../../Models/Model";
 import customerWebApi from "../../../../Services/CustomerWebApi";
 import PurchaseCouponItem from "../../../Items/PurchaseCouponItem/PurchaseCouponItem";
 import notify from "../../../../Services/ErrorMessage";
+import store from "../../../../Redux/Store";
 
 
 function PurchaseCoupon(): JSX.Element {
@@ -11,16 +12,32 @@ function PurchaseCoupon(): JSX.Element {
     const [origin, setOrigin] = useState<CouponModel[]>([]);
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [selectedPrice, setSelectedPrice] = useState(300);
+    const [customerCoupons, setCustomerCoupons] = useState<CouponModel[]>(
+        store.getState().customerReducer.coupons
+    );
+    useEffect(() => {
+        return store.subscribe(() =>
+            setCustomerCoupons(store.getState().customerReducer.coupons)
+        );
+    }, []);
+    
     useEffect(() => {
         customerWebApi
             .couponsList()
             .then((res) => {
-                setCoupons(res.data);
-                setOrigin(res.data); 
+                setCoupons(
+                    res.data.filter((obj1) => {
+                        return !customerCoupons.some(
+                            (obj2) => obj1.id === obj2.id
+                        );
+                    })
+                );
+                setOrigin(res.data);
             })
             .catch((err) => notify.error(err));
     }, []);
 
+    
     const all = origin;
     const byCategory = origin.filter((c) => c.category === selectedCategory);
     const byPrice = origin.filter((c) => c.price < selectedPrice);

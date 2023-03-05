@@ -27,7 +27,7 @@ class CompanyWebApi {
     public deleteCoupon = (couponId: number): Promise<AxiosResponse<any>> => {
         const token = store.getState().userReducer.user.token;
         const headers = { authorization: token };
-        const url = global.urls.company + "/" + token + "/coupons/" + couponId;
+        const url = global.urls.company + "/coupons/" + couponId;
         console.log(url);
         return axios.delete<any>(url, { headers });
     };
@@ -36,18 +36,10 @@ class CompanyWebApi {
     ): Promise<AxiosResponse<CouponModel[]>> {
         const token = store.getState().userReducer.user.token;
         const headers = { authorization: token };
-        const url = global.urls.company + "/" + token + "/coupons";
+        const url = global.urls.company +"/coupons";
         return axios.get<CouponModel[]>(url, { headers });
     }
 
-    public getSingleCoupon(
-        couponId: number
-    ): Promise<AxiosResponse<CouponModel[]>> {
-        const token = store.getState().userReducer.user.token;
-        const headers = { authorization: token };
-        const url = global.urls.company + "/coupons/" + couponId;
-        return axios.get<CouponModel[]>(url, { headers });
-    }
 }
 const companyWebApi = new CompanyWebApi();
 export default companyWebApi;
